@@ -1,0 +1,100 @@
+﻿git remote add origin https://github.com/try-git/try_git.git
+
+COMANDOS GIT
+
+Inicia um repositório git
+git init
+
+Criar um arquivo
+touch nome_do_arquivo
+
+Criar um arquivo gitignore
+touch .gitignore
+
+Editar um arquivo gitignore
+Na raiz do projeto
+editor .gitignore 
+
+Exibe o status do git
+git status
+
+Exibe o log
+git log
+git log --pretty=oneline
+
+Exibe o log resumido
+git shortlog
+
+Exibe um log que ainda não sei oque é.
+git reflog
+
+Listar os repositórios remotos
+git remote -v
+
+Editar a url do repositório remoto (SSH ou HTTPS)
+git remote set-url origin git@domain:username/repository.git
+Exemplo1: git remote set-url origin git@github.com:deployerssix/six-app.git
+Exemplo2: git remote set-url origin https://github.com/deployerssix/six-app.git
+
+Clonar um repositório (SSH ou HTTPS)
+git clone git@domain:username/repository.git
+Exemplo1: git clone git@github.com:deployerssix/six-app.git
+Exemplo2: git clone https://github.com/deployerssix/six-app.git
+
+Rastrear as branchs remotas
+git fetch -a
+
+Rastrear as branchs locais
+git branch -a
+
+Criar uma nova branch
+git branch nome_da_branch_criada
+Exemplo: git branch developer
+
+Trocar de branch
+git checkout nome_da_branch_que se deseja mudar.
+Exemplo: suponha que existem duas branchs: master e developer
+Suponha você esteja na branch master
+Para ir para branch developer
+git checkout developer
+
+Cria e move para uma nova branch
+git checkout -b nova_branch
+
+Resetando um commit
+git reset --hard commit
+Exemplo: git reset --hard cedc856
+
+Para voltar ao um determinado número de commits atrás.
+git reset --hard HEAD~numero_de_commits_deletados
+Exemplo: git reset --hard HEAD~1
+git push --force origin master
+
+git reset --soft HEAD~numero_de_commits_deletados
+Exemplo: git reset --soft HEAD~2
+
+Pesquisar e entender melhor esse comando.
+git cherry-pick nome_commit
+
+Pesquisar e entender melhor esse comando.
+git revert --strategy resolve <commit>
+
+Mostrar um log customizado
+$ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+Alternativas para alias no Git
+$ git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+$ git logline
+
+alias logline="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+Limpar o cache
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files" 
+
+
+
+
+
+
